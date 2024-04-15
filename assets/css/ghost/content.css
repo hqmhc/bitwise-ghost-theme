@@ -3,7 +3,7 @@
 /* Content grid
 /* ---------------------------------------------------------- */
 
-.gh-canvas {
+/* .gh-canvas {
     display: grid;
     grid-template-columns:
         [full-start]
@@ -34,13 +34,13 @@
 
 .kg-width-full img {
     width: 100%;
-}
+} */
 
 
 /* Content & Typography
 /* ---------------------------------------------------------- */
 
-.gh-content > * + * {
+/* .gh-content > * + * {
     margin-top: 4vmin;
 }
 
@@ -109,13 +109,13 @@
     .gh-content blockquote::before {
         left: -4vmin;
     }
-}
+} */
 
 
 /* Cards
 /* ---------------------------------------------------------- */
 
-.gh-content :not(.kg-card):not([id]) + .kg-card {
+/* .gh-content :not(.kg-card):not([id]) + .kg-card {
     margin-top: 6vmin;
 }
 
@@ -161,10 +161,10 @@ figcaption strong {
     flex-direction: column;
     align-items: center;
     width: 100%;
-}
+} */
 
 /* Default to 16 / 9 aspect ratio for YouTube & Vimeo embeds  */
-.kg-embed-card > :where(iframe[src*="youtube.com"],iframe[src*="vimeo.com"]) {
+/* .kg-embed-card > :where(iframe[src*="youtube.com"],iframe[src*="vimeo.com"]) {
     width: 100%;
     height: auto;
     aspect-ratio: 16 / 9;
@@ -172,13 +172,13 @@ figcaption strong {
 
 .kg-image-card img {
     margin: auto;
-}
+} */
 
 
 /* Galleries
 /* ---------------------------------------------------------- */
 
-.kg-gallery-card + .kg-gallery-card {
+/* .kg-gallery-card + .kg-gallery-card {
     margin-top: 0.75em;
 }
 
@@ -205,13 +205,13 @@ figcaption strong {
 
 .kg-gallery-image:not(:first-of-type) {
     margin: 0 0 0 0.75em;
-}
+} */
 
 
 /* Bookmark Cards
 /* ---------------------------------------------------------- */
 
-.kg-bookmark-card,
+/* .kg-bookmark-card,
 .kg-bookmark-publisher {
     position: relative;
 }
@@ -306,13 +306,13 @@ figcaption strong {
 .kg-bookmark-publisher::before {
     content: "•";
     margin: 0 .5em;
-}
+} */
 
 
 /* Card captions
 /* ---------------------------------------------------------- */
 
-.kg-width-full.kg-card-hascaption {
+/* .kg-width-full.kg-card-hascaption {
     display: grid;
     grid-template-columns: inherit;
 }
@@ -326,13 +326,13 @@ figcaption strong {
 
 .kg-width-full.kg-card-hascaption figcaption {
     grid-column: main-start / main-end;
-}
+} */
 
 
 /* Tables
 /* ---------------------------------------------------------- */
 
-.gh-content table {
+/* .gh-content table {
     border-collapse: collapse;
     width: 100%;
 }
@@ -365,4 +365,4 @@ figcaption strong {
 
 .gh-content tbody tr:last-child {
     border-bottom: 1px solid rgba(0,0,0,.1);
-}
+} */
