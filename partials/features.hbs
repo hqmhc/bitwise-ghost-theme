@@ -1,0 +1,36 @@
+<div class="relative bg-teal-50 py-4 sm:py-12">
+  <div class="mx-auto max-w-7xl lg:grid lg:grid-cols-12 lg:gap-x-8 lg:px-8">
+   <div class="relative lg:col-span-5 lg:-mr-8 xl:mr-0 p-16 ">
+      <img class="aspect-[3/2] p-12 w-full object-cover lg:absolute lg:inset-0 lg:aspect-auto lg:h-full" 
+      src="https://source.unsplash.com/random/480x360" alt="">
+    </div>
+     <div class="px-6 pb-8 pt-10 sm:pb-16 lg:col-span-7 lg:px-0 lg:pb-24 lg:pt-24 xl:col-span-6">
+      <div class="mx-auto max-w-2xl lg:mx-0">
+       <div class="flex items-center gap-x-12 text-md">
+              <time datetime="2020-03-16" class="text-gray-500">{{date format="D MMM YYYY"}}</time>
+              <a href="#" class="relative z-10 rounded-full bg-gray-50 px-3 py-1.5 font-medium text-gray-600 hover:bg-gray-100">Marketing</a>
+            </div>
+        </div>
+        <h1 class="mt-24 text-4xl font-bold tracking-tight text-gray-900 sm:mt-10 sm:text-6xl">Data to enrich your online business</h1>
+        <p class="mt-6 text-lg leading-8 text-gray-600">Small Business, Big Lessons is a podcast from Buffer that goes behind the scenes with inspirational small businesses who are truly driving innovation and redefining how work happens.</p>
+        <div class="mt-10 flex items-center gap-x-6">
+          <a href="#" class="rounded-md bg-indigo-600 px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600">Get started</a>
+          <a href="#" class="text-sm font-semibold leading-6 text-gray-900">Learn more <span aria-hidden="true">→</span></a>
+        </div>
+        <div class="mt-6 flex border-t border-gray-900/5 pt-6">
+              <div class="relative flex items-center gap-x-4">
+                <img src="https://source.unsplash.com/random/480x360" alt="" class="h-10 w-10 rounded-full bg-gray-50">
+                <div class="text-sm leading-6">
+                  <p class="font-semibold text-gray-900">
+                    <a href="#">
+                      <span class="absolute inset-0"></span>
+                     {{ authors.0.name }}
+                    </a>
+                  </p>
+                  <p class="text-gray-600">{{ authors.0.bio }}</p>
+                </div>
+              </div>
+      </div>
+    </div>
+  </div>
+</div>
