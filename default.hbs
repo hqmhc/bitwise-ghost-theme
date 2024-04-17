@@ -12,6 +12,8 @@
     {{ghost_head}}
     {{!-- Outputs important meta data and settings, should always be in <head> --}}
 
+    {{{block "head"}}}
+
 </head>
 <body class="{{body_class}}">
 <div class="gh-viewport">
@@ -82,6 +84,8 @@
 {{!-- <foot> --}}
 {{ghost_foot}}
 {{!-- Outputs important scripts - should always be included before closing body tag --}}
+
+{{{block "scripts"}}}
 
 </body>
 </html>
