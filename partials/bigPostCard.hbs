@@ -1,9 +1,11 @@
 {{! bigPostCard.hbs }}
-    <div>
+    
 
 <article class="relative isolate flex flex-col gap-8 lg:flex-row">
   <div class="relative lg:w-[38rem] lg:h-[24rem] lg:shrink-0 ml-16">
-    <img src="{{ feature_image }}" alt="" class="absolute inset-0 w-full h-full bg-gray-50 object-cover  ring-1 ring-inset ring-gray-900/10">
+    <a href="{{url}}">
+    <img src="{{img_url feature_image }}" alt="" class="absolute inset-0 w-full h-full bg-gray-50 object-cover  ring-1 ring-inset ring-gray-900/10">
+    </a>
   </div>
   
     <div class="group relative max-w-xl">
@@ -55,4 +57,3 @@
     
   </div>
 </article>
-</div>
