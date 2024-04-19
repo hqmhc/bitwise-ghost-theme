@@ -1,17 +1,17 @@
-<section class="px-12 sm:px-16 pb-50 relative scroll-margin-top-40 pt-0">
+<section class=" relative scroll-margin-top-40 pt-12">
     <div class="mx-auto px-20">
-        <nav class="flex overflow-x: scroll gap-x-12 justify-between mx-auto border-b border-gray-500 pagination" role="navigation">
-    <button class="text-gray-600 font-normal"><a href="/latest-updates/">Latest Updates</a></button>
-    <button class="text-gray-600 font-normal hover-underline"><a href="/small-business/">Small Business</a></button>
-    <button class="text-gray-600 hover-underline font-normal"><a href="/social-media-marketing/">Social Media Marketing</a></button>
-    <button class="text-gray-600 cursor-pointer hover-underline font-normal"><a href="/news/">News</a></button>
-    <button class="text-gray-600 cursor-pointer hover-underline font-normal"><a href="/podcasts/">Podcasts</a></button>
-    <button class="text-gray-600 cursor-pointer hover-underline font-normal"><a href="/open-blog/">Open blog</a></button>
-    <button class="text-gray-600 cursor-pointer hover-underline font-normal"><a href="/case-studies/">Case studies</a></button>
+        <nav class="flex overflow-x: scroll gap-x-12 justify-between mx-auto pagination" role="navigation">
+    <button class="text-gray-600 font-normal"><a href="/">Latest Updates</a></button>
+    <button class="text-gray-600 font-normal hover-underline"><a href="/tag/small-business/">Small Business</a></button>
+    <button class="text-gray-600 hover-underline font-normal"><a href="/tag/social-media-marketing/">Social Media Marketing</a></button>
+    <button class="text-gray-600 cursor-pointer hover-underline font-normal"><a href="/tag/news/">News</a></button>
+    <button class="text-gray-600 cursor-pointer hover-underline font-normal"><a href="/tag/podcasts/">Podcasts</a></button>
+    <button class="text-gray-600 cursor-pointer hover-underline font-normal"><a href="/tag/open-blog/">Open blog</a></button>
+    <button class="text-gray-600 cursor-pointer hover-underline font-normal"><a href="/tag/case-studies/">Case studies</a></button>
 </nav>
-        <hr class="mt-4"/>
+        <hr class="mt-6"/>
         <!-- This is where the posts will be displayed -->
-        {{#get "posts" filter="tags:[{{slug}}]" include="tags,authors"}}
+        {{#get "posts" filter="tags.slug:[{{slug}}]" include="tags,authors"}}
         {{#foreach posts}}
         <div class="mt-6 flex border-t border-gray-900/5 pt-6">
             <div class="relative flex items-center gap-x-4">
@@ -20,7 +20,7 @@
                 </div>
                 <div class="text-sm leading-6">
                     <p class="font-bold text-lg text-blue-600 hover:underline">
-                        <a href="{{url}}">
+                        <a href="/tag/{{url}}">
                             <span class="absolute inset-0"></span>
                             {{title}}
                         </a>
