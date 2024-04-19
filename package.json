@@ -86,6 +86,7 @@
     },
     "type": "module",
     "dependencies": {
+        "mysql2": "^3.9.6",
         "tiny-slider": "^2.9.4"
     }
 }
