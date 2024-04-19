@@ -2,31 +2,31 @@
 Re-usable card for linking to posts
 --}}
 
-<article class="flex flex-col items-start justify-between mx-2 ">
+<article class="m-6 flex flex-col items-start justify-between border border-gray-200 rounded-lg bg-white shadow dark:bg-gray-100">
         <div class="relative w-full">
           <img src="{{ feature_image }}" alt="" 
-          class="aspect-[16/9] w-full rounded-2xl bg-gray-100 object-cover sm:aspect-[2/1] lg:aspect-[3/2]">
+          class="aspect-[16/9] w-full rounded-t-lg bg-gray-100 object-cover sm:aspect-[2/1] lg:aspect-[3/2]">
         </div>
           <div class="absolute inset-0 rounded-2xl ">
         </div>
-        <div class="max-w-xl">
-          <div class="mt-8 flex items-center gap-x-4 text-xs">
-            <time datetime={{date format="YYYY-MM-DD"}} class="text-gray-500">{{date format="D MMM YYYY"}}</time>
-            <a href="#" class="relative z-10  bg-gray-50 px-3 py-1.5 font-medium text-gray-600 hover:bg-gray-100">{{title}}</a>
+        <div class="max-w-xl pl-4 group">
+          <div class="mt-8 flex items-center justify-between gap-x-4 text-xs">
+            <a href="#" class="relative z-10  font-bold text-blue-600 group-hover:underline text-lg">{{title}}</a>
+            <time datetime={{date format="YYYY-MM-DD"}} class="text-gray-500 pr-4">{{date format="D MMM YYYY"}}</time>
           </div>
           <div class="group relative">
-            <h3 class="mt-3 text-xl font-bold leading-6">
-              <a href="#">
-                <span class="absolute inset-0"></span>
+            <h3 class="mt-3 text-xl font-bold leading-6 group-hover:underline">
+              <a href="{{url}}">
+                <span class="absolute inset-0 "></span>
                 {{title}}
               </a>
             </h3>
             <p class="mt-5 line-clamp-3 text-sm leading-6 text-gray-600">{{excerpt}}</p>
           </div>
-          <div class="relative mt-8 flex items-center gap-x-4">
+          <div class="relative mt-8 flex items-center gap-x-4 pb-6">
             <img src="{{ authors.0.profile_image }}" alt="" class="h-10 w-10 rounded-full bg-gray-100">
             <div class="text-sm leading-6">
-              <p class="font-semibold text-gray-900 hover:underline underline-bio">
+              <p class="font-semibold text-gray-900 group-hover:underline ">
                 <a href="/author/{{ authors.0.slug }}">
                   <span class="absolute inset-0"></span>
                   {{ authors.0.name }}
@@ -36,11 +36,4 @@ Re-usable card for linking to posts
           </div>
         </div>
       </article>
-      <style>
-        /* CSS code to underline text when hovering over the parent div */
-        .underline-on-hover:hover .underline-flow,
-        .underline-on-hover:hover .underline-bio,
-        .underline-on-hover:hover .underline-title {
-            text-decoration: underline;
-        }
-    </style>
+      

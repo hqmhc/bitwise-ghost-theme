@@ -1,41 +1,64 @@
 {{!< default}}
 {{#post}}
 
+<article>
+<header class="relative isolate flex flex-col gap-4 lg:flex-row mt-10">
+  <div class="group relative max-w-xl ml-20">
+    <div class="flex items-center gap-x-4 text-xs">
+      <h2 class="text-gray-500 text-2xl font-bold">Blog</h2>
+      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+        <path stroke-linecap="round" stroke-linejoin="round" d="m8.25 4.5 7.5 7.5-7.5 7.5" />
+      </svg>
+      <a href="{{allPostsURL}}" class="relative z-10 text-2xl px-3 py-1.5 font-bold text-blue-600 hover:bg-gray-100 underline-flow">Flow</a>
+      <span>
+        {{#foreach tags}}
+          <a href="#" class="relative z-10 rounded-full bg-gray-50 px-3 py-1.5 font-medium text-gray-600 hover:bg-gray-100">{{name}}</a>
+        {{/foreach}}
+      </span>
+    </div>
+    <h1 class="text-4xl group-hover:underline font-bold leading-none text-gray-900 ">
+      <a href="{{url}}">
+        <span class="absolute inset-0"></span>
+        {{title}}
+      </a>
+    </h1>
+    <p class="mt-2 font-medium text-md leading-6">{{excerpt}}</p>
+    <div class="flex items-center gap-x-4 text-xs mt-2">
+      <time datetime="2020-03-16" class="text-gray-500">{{date format="D MMM YYYY"}}</time>
+      </span> {{reading_time}}</span>
+      <a href="{{allPostsURL}}" class="group-hover:underline relative z-10 text-medium px-3 py-1.5 font-semibold hover:bg-gray-100 bg-gray-100">Flow</a>
+    </div>
+    <div class="mt-2 flex border-t border-gray-900/5 pt-6">
+      <div class="relative flex items-center gap-x-4">
+        <div class="h-16 w-16 rounded-full ring-1 ring-blue-500 flex items-center justify-center">
+          <img src="{{ authors.0.profile_image }}" alt="" class="h-12 w-12 rounded-full ring-1 ring-white">
+        </div>
+        <div class="text-sm leading-6">
+          <p class="font-bold text-lg text-blue-600 group-hover:underline">
+            <a href="/author/{{ authors.0.slug }}">
+              <span class="absolute inset-0"></span>
+              {{ authors.0.name }}
+            </a>
+          </p>
+          <p class="text-gray-600">{{ authors.0.bio }}</p>
+        </div>
+      </div>
+    </div>
+  </div>
 
-<article class="gh-article {{post_class}}">
-
-    <header class="gh-header gh-canvas">
-        <span class="gh-post-meta"><time datetime="{{date format="YYYY-MM-DD"}}">{{date format="D MMM YYYY"}}</time> <span class="bull">&bull;</span> HELLO {{reading_time}}</span>
-        <h1 class="gh-title">{{title}}</h1>
-
-        {{#if custom_excerpt}}
-        <p class="gh-excerpt">{{custom_excerpt}}</p>
-        {{/if}}
-
-        {{#if feature_image}}
-        <figure class="gh-feature-image">
-            <img
-                srcset="{{img_url feature_image size="s"}} 300w,
-                        {{img_url feature_image size="m"}} 600w,
-                        {{img_url feature_image size="l"}} 1000w,
-                        {{img_url feature_image size="xl"}} 2000w"
-                sizes="(max-width: 1000px) 1000px, 2000px"
-                loading="lazy"
-                src="{{img_url feature_image size="xl"}}"
-                alt="{{#if feature_image_alt}}{{feature_image_alt}}{{else}}{{title}}{{/if}}"
-            />
-            {{#if feature_image_caption}}
-                <figcaption>{{feature_image_caption}}</figcaption>
-            {{/if}}
-        </figure>
-        {{/if}}
-    </header>
-
-    <div class="gh-content gh-canvas">
+  <div class="relative lg:w-[38rem] lg:h-[24rem] lg:shrink-0 ml-20 ">
+    <a href="{{url}}">
+      <img src="{{img_url feature_image }}" alt="" class="absolute inset-0 w-full h-full bg-gray-50 object-cover ring-1 ring-inset ring-gray-900/10">
+    </a>
+  </div>
+</header>
+<div class="gh-content gh-canvas ml-72 mr-72 mt-24 px-20 flex flex-col items-center justify-center font-medium text-lg leading-8">
         {{content}}
     </div>
 
-    <footer class="gh-footer gh-canvas">
+</article>
+    
+<footer class="gh-footer gh-canvas flex items-center justify-center mt-6">
 
         <div class="gh-post-authors">
             Written by {{#foreach authors}}<a href="{{url}}">{{name}}</a>{{/foreach}}
@@ -49,19 +72,5 @@
 
     </footer>
 
-</article>
-
-<aside class="gh-readmore">
-    <div class="gh-readmore-inner gh-container">
-        <div class="">
-            {{#next_post}}<a href="{{url}}">{{> "icons/arrow-left"}} <h4>{{title}}</h4></a>{{/next_post}}
-        </div>
-        <div class="gh-readmore-prev ">
-            {{#prev_post}}<a href="{{url}}">
-                <h4>{{title}}</h4> {{> "icons/arrow-right"}}
-            </a>{{/prev_post}}
-        </div>
-    </div>
-</aside>
 
 {{/post}}

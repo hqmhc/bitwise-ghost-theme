@@ -1,21 +1,14 @@
 {{! bigPostCard.hbs }}
- <style>
-        /* CSS code to underline text when hovering over the parent div */
-        .underline-on-hover:hover .underline-flow,
-        .underline-on-hover:hover .underline-bio,
-        .underline-on-hover:hover .underline-title {
-            text-decoration: underline;
-        }
-    </style>
-
-    <div>
+    
 
 <article class="relative isolate flex flex-col gap-8 lg:flex-row">
   <div class="relative lg:w-[38rem] lg:h-[24rem] lg:shrink-0 ml-16">
-    <img src="{{ feature_image }}" alt="" class="absolute inset-0 w-full h-full bg-gray-50 object-cover  ring-1 ring-inset ring-gray-900/10">
+    <a href="{{url}}">
+    <img src="{{img_url feature_image }}" alt="" class="absolute inset-0 w-full h-full bg-gray-50 object-cover  ring-1 ring-inset ring-gray-900/10">
+    </a>
   </div>
   
-    <div class="group relative underline-on-hover max-w-xl">
+    <div class="group relative max-w-xl">
         <div class="flex items-center gap-x-4 text-xs">
             <h2 class="text-gray-500 text-2xl font-bold">Blog</h2>
             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
@@ -28,7 +21,7 @@
             
             </span>
         </div>
-        <h1 class="text-4xl hover:underline font-bold leading-none text-gray-900 underline-title">
+        <h1 class="text-4xl group-hover:underline font-bold leading-none text-gray-900 ">
             <a href="{{url}}">
                 <span class="absolute inset-0"></span>
                 {{title}}
@@ -38,7 +31,7 @@
         <div class="flex items-center gap-x-4 text-xs mt-2">
             <time datetime="2020-03-16" class="text-gray-500">{{date format="D MMM YYYY"}}</time>
             </span> {{reading_time}}</span>
-            <a href="{{allPostsURL}}" class="hover:underline relative z-10 text-medium px-3 py-1.5 font-semibold hover:bg-gray-100 bg-gray-100 underline-flow">Flow</a>
+            <a href="{{allPostsURL}}" class="group-hover:underline relative z-10 text-medium px-3 py-1.5 font-semibold hover:bg-gray-100 bg-gray-100">Flow</a>
         </div>
         <div class="mt-2 flex border-t border-gray-900/5 pt-6">
             <div class="relative flex items-center gap-x-4">
@@ -48,7 +41,7 @@
 </div>
 
                 <div class="text-sm leading-6">
-                    <p class="font-bold text-lg text-blue-600 hover:underline underline-bio">
+                    <p class="font-bold text-lg text-blue-600 group-hover:underline">
 
                         <a href="/author/{{ authors.0.slug }}">
 
@@ -64,4 +57,3 @@
     
   </div>
 </article>
-</div>
