@@ -1,15 +1,23 @@
-
-
-<article class="flex flex-col items-start justify-between   ">
+<article class="flex flex-col items-start justify-between {{post_class}}">
   <div class="relative w-full">
     {{#if feature_image}}
-    <a
-      href='{{url}}'
-    >
-    <img src="{{img_url feature_image }}" alt="" 
-    class="aspect-[16/9] w-full rounded-2xl bg-gray-100 object-cover sm:aspect-[2/1] lg:aspect-[3/2]" />
-    </a>
-    {{/if}}
+    <div class="relative">
+        <a href='{{url}}'>
+            <img src="{{img_url feature_image }}" alt="{{#if feature_image_alt}}{{feature_image_alt}}{{else}}{{title}}{{/if}}" 
+                class="aspect-[16/9] w-full rounded-2xl bg-gray-100 object-cover sm:aspect-[2/1] lg:aspect-[3/2]" />
+
+        <div class="absolute bottom-0 left-0 p-4">
+            <a href="/author/{{ authors.0.slug }}">
+                <div class="h-10 w-10 rounded-full ring-1 ring-gray-100 flex items-center justify-center">
+                <img src="{{ authors.0.profile_image }}" alt="" 
+                class="h-10 w-10 rounded-full ring-1 ring-white hover:ring-2">
+               </div>
+            </a>
+        </div>
+        </a>
+    </div>
+{{/if}}
+
     <div class="absolute inset-0 rounded-2xl ring-1 ring-inset ring-gray-900/10"></div>
   </div>
   <div class="max-w-xl">
@@ -20,25 +28,14 @@
       {{/foreach}}
     </div>
     <div class="group relative">
-      <h3 class="mt-3 text-lg font-semibold leading-6 text-gray-900 group-hover:text-gray-600">
+      <h3 class="mt-3 text-3xl font-bold tracking-loose leading-9 text-gray-900 group-hover:underline">
         <a href="{{url}}">
           <span class="absolute inset-0"></span>
           {{title}}
         </a>
       </h3>
-      <p class="mt-5 line-clamp-3 text-sm leading-6 text-gray-600">{{excerpt}}</p>
-    </div>
-    <div class="relative mt-8 flex items-center gap-x-4">
-      <img src="{{ authors.0.profile_image }}" alt="" class="h-10 w-10 rounded-full bg-gray-100">
-      <div class="text-sm leading-6">
-        <p class="font-semibold text-gray-900">
-          <a href="{{ authors.0.profile_url }}">
-            <span class="absolute inset-0"></span>
-            {{ authors.0.name }}
-          </a>
-        </p>
-        <p class="text-gray-600">{{ authors.0.bio }}</p>
-      </div>
+      <p class="mt-5 line-clamp-3 text-sm leading-6">{{excerpt}}</p>
     </div>
   </div>
 </article>
+﻿
