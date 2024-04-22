@@ -2,9 +2,10 @@
     
 
 <article class="relative isolate flex flex-col gap-8 lg:flex-row">
-  <div class="relative lg:w-[38rem] lg:h-[24rem] lg:shrink-0 ml-16">
-    <a href="{{url}}">
-    <img src="{{img_url feature_image }}" alt="" class="absolute inset-0 w-full h-full bg-gray-50 object-cover  ring-1 ring-inset ring-gray-900/10" />
+  <div class="relative lg:w-[38rem] lg:h-[24rem] lg:shrink-0">
+    <a href='{{url}}'>
+    <img src="{{img_url feature_image }}" alt="" 
+    class="absolute inset-0 w-full h-full bg-gray-50 object-cover  ring-1 ring-inset ring-gray-900/10" />
     </a>
   </div>
   
@@ -36,15 +37,12 @@
         <div class="mt-2 flex border-t border-gray-900/5 pt-6">
             <div class="relative flex items-center gap-x-4">
                 <div class="h-16 w-16 rounded-full ring-1 ring-blue-500 flex items-center justify-center">
-    <img src="{{ authors.0.profile_image }}" alt="" 
-    class="h-12 w-12 rounded-full ring-1 ring-white">
-</div>
-
+                <img src="{{ authors.0.profile_image }}" alt="" 
+                class="h-12 w-12 rounded-full ring-1 ring-white">
+               </div>
                 <div class="text-sm leading-6">
                     <p class="font-bold text-lg text-blue-600 group-hover:underline">
-
                         <a href="/author/{{ authors.0.slug }}">
-
                             <span class="absolute inset-0"></span>
                             {{ authors.0.name }}
                         </a>
