@@ -3,12 +3,11 @@
 
 <article class="relative isolate flex flex-col gap-8 lg:flex-row">
   <div class="relative lg:w-[38rem] lg:h-[24rem] lg:shrink-0">
-    <a href='{{url}}'>
+    <a href="{{url}}">
     <img src="{{img_url feature_image }}" alt="" 
     class="absolute inset-0 w-full h-full bg-gray-50 object-cover  ring-1 ring-inset ring-gray-900/10" />
     </a>
   </div>
-  
     <div class="group relative max-w-xl">
         <div class="flex items-center gap-x-4 text-xs">
             <h2 class="text-gray-500 text-2xl font-bold">Blog</h2>
@@ -17,9 +16,7 @@
             </svg>
             <a href="{{allPostsURL}}" class="relative z-10 text-2xl px-3 py-1.5 font-bold text-blue-600 hover:bg-gray-100 underline-flow">Flow</a>
             <span>
-                
-                <a href="#" class="relative z-10 rounded-full bg-gray-50 px-3 py-1.5 font-medium text-gray-600 hover:bg-gray-100">{{name}}</a>
-            
+                <a href="#" class="relative z-10 rounded-full bg-gray-50 px-3 py-1.5 font-medium text-gray-600 hover:bg-gray-100">{{name}}</a>       
             </span>
         </div>
         <h1 class="text-4xl group-hover:underline font-bold leading-none text-gray-900 ">
@@ -39,7 +36,9 @@
                 <div class="h-16 w-16 rounded-full ring-1 ring-blue-500 flex items-center justify-center">
                 <img src="{{ authors.0.profile_image }}" alt="" 
                 class="h-12 w-12 rounded-full ring-1 ring-white">
-               </div>
+
+            </div>
+
                 <div class="text-sm leading-6">
                     <p class="font-bold text-lg text-blue-600 group-hover:underline">
                         <a href="/author/{{ authors.0.slug }}">
@@ -51,7 +50,6 @@
                 </div>
             </div>
         </div>
-    </div>
-    
+    </div> 
   </div>
 </article>

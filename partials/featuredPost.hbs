@@ -1,5 +1,4 @@
 
-
 <article class="flex flex-col items-start justify-between {{post_class}}">
   <div class="relative w-full">
     {{#if feature_image}}
@@ -7,7 +6,7 @@
         <a href='{{url}}'>
             <img src="{{img_url feature_image }}" alt="{{#if feature_image_alt}}{{feature_image_alt}}{{else}}{{title}}{{/if}}" 
                 class="aspect-[16/9] w-full rounded-2xl bg-gray-100 object-cover sm:aspect-[2/1] lg:aspect-[3/2]" />
-        
+
         <div class="absolute bottom-0 left-0 p-4">
             <a href="/author/{{ authors.0.slug }}">
                 <div class="h-10 w-10 rounded-full ring-1 ring-gray-100 flex items-center justify-center">
@@ -40,3 +39,4 @@
     </div>
   </div>
 </article>
+﻿
