@@ -10,7 +10,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/tiny-slider/2.9.2/min/tiny-slider.js"></script>
 {{/contentFor}}
 
-<div class="gh-page">
+<div class="gh-page ml-20">
     <div class="gh-container ">
 
         <div class="gh-postfeed">
@@ -22,71 +22,32 @@
                 {{/foreach}}
             </div>
         </div>
-        <div id="custom-carousel-controls-container" class="flex ml-16 custom-controls mt-8">
-            <button id="prevButton" class="custom-prev-button">
-                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-4 h-4">
+        <hr class="mt-8"/>
+        <div id="custom-carousel-controls-container" class="flex ml-2 custom-controls mt-2 mb-1">
+            <button id="prevButton" class="custom-prev-button text-gray-500 hover:text-gray-900">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-5 h-5">
             <path stroke-linecap="round" stroke-linejoin="round" d="M10.5 19.5 3 12m0 0 7.5-7.5M3 12h18" />
             </svg>
 
             </button>
-            <button id="nextButton" class="custom-next-button">
-                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-4 h-4">
+            <button id="nextButton" class="custom-next-button text-gray-500 hover:text-gray-900 pl-2">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-5 h-5">
             <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3" />
             </svg>
 
             </button>
         </div>
         <div class="gh-postfeed">
-            <div id="js-featured-feed" class="mx-16 sm:px-12justify-between ">
+            <div id="js-featured-feed" class=" ">
                 {{#get 'posts' filter='featured:true' limit='all' as |featured|}}
                     {{#foreach featured visibility='all'}}
                         <div class="w-full">
                             {{> featuredPost page=../pagination.page}}
-
                         </div>
-
-                            </div>
-                        {{/foreach}}
-                    {{/get}}
-                {{!-- </div> --}}
-            </div>
-            </div>
-
-            <div class="gh-postfeed">
-        {{#get "posts" limit="1"}}
-            {{#foreach posts}}
-             {{> newsletter page=../pagination.page}}
-            {{/foreach}}
-        {{/get}}
-                {{!-- </div> --}}
-            </div>
-            </div>
-
-        <div class="gh-postfeed">
-        {{#get "posts" limit="1"}}
-            {{#foreach posts}}
-                {{> features page=../pagination.page}}
-            {{/foreach}}
-        {{/get}}
-         </div>
-
-         <div class="gh-postfeed">
-        {{#get "posts"}}
-                {{> category page=../pagination.page}}
-        {{/get}}
-         </div>
-
-        <div class="gh-postfeed">
-            <div class="px-8 sm:px-12 mx-auto mt-6 grid max-w-4xl grid-cols-1 gap-x-8 gap-y-20 lg:mx-0 lg:max-w-full lg:grid-cols-3">
-                {{#get "posts" limit="6" order="published_at desc"}}
-                    {{#foreach posts}}
-                        {{> "card"}}
-
                     {{/foreach}}
                 {{/get}}
             </div>
         </div>
-
 
         <noscript>
             <div class="gh-pagination">
