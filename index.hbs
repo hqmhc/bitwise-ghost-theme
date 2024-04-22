@@ -11,10 +11,9 @@
 {{/contentFor}}
 
 <div class="gh-page">
-    <div class="gh-container">
+    <div class="gh-container ">
 
         <div class="gh-postfeed">
-
             <div class="mt-16 space-y-20 lg:mt-20 lg:space-y-20">
                 {{#foreach posts}}
                     {{#if @first}}
@@ -23,14 +22,29 @@
                 {{/foreach}}
             </div>
         </div>
+        <div id="custom-carousel-controls-container" class="flex ml-16 custom-controls mt-8">
+            <button id="prevButton" class="custom-prev-button">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-4 h-4">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M10.5 19.5 3 12m0 0 7.5-7.5M3 12h18" />
+            </svg>
 
-       <div class="gh-postfeed">
-            {{!-- <div class="bg-teal-200 mx-auto mt-16 grid max-w-4xl grid-cols-1 gap-x-8 gap-y-20 lg:mx-0 lg:max-w-full lg:grid-cols-3"> --}}
-                <div id="js-featured-feed" class="mx-auto mx-w-auto p-8 sm:p-12 py-4 sm:py-12 justify-between">
-                    {{#get 'posts' filter='featured:true' limit='all' as |featured|}}
-                        {{#foreach featured visibility='all'}}
+            </button>
+            <button id="nextButton" class="custom-next-button">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-4 h-4">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3" />
+            </svg>
+
+            </button>
+        </div>
+        <div class="gh-postfeed">
+            <div id="js-featured-feed" class="mx-16 sm:px-12justify-between ">
+                {{#get 'posts' filter='featured:true' limit='all' as |featured|}}
+                    {{#foreach featured visibility='all'}}
                         <div class="w-full">
                             {{> featuredPost page=../pagination.page}}
+
+                        </div>
+
                             </div>
                         {{/foreach}}
                     {{/get}}
@@ -67,13 +81,13 @@
                 {{#get "posts" limit="6" order="published_at desc"}}
                     {{#foreach posts}}
                         {{> "card"}}
+
                     {{/foreach}}
                 {{/get}}
             </div>
         </div>
 
 
-        <!-- If JS isn't enabled, fallback to standard pagiantion -->
         <noscript>
             <div class="gh-pagination">
                 {{pagination}}
@@ -90,16 +104,26 @@
                 container: sliderContainer,
                 items: 3,
                 slideBy: 1,
+                mouseDrag: true,
+                swipeAngle: false,
+                speed: 400,
                 loop: true,
                 autoplay: false,
-                gutter: 32,
-                nav: true,
+                gutter: 10,
+                nav: false, // Disable default navigation
+                controlsContainer: '#custom-carousel-controls-container', // Use the slider container for custom controls
+                prevButton: document.querySelector('.custom-prev-button'), // Custom previous button
+                nextButton: document.querySelector('.custom-next-button'), // Custom next button
                 responsive: {
                     0: { items: 1, },
                     768: { items: 2, },
                     992: { items: 3, }
-                }
+                },
+                controls: true, // Controls enabled
             });
         }
     </script>
 {{/contentFor}}
+
+<!-- Custom SVG icons for previous and next buttons -->
+

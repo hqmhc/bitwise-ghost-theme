@@ -1,13 +1,13 @@
-<article class="flex flex-col items-start justify-between">
+
+
+<article class="flex flex-col items-start justify-between   ">
   <div class="relative w-full">
     {{#if feature_image}}
     <a
       href='{{url}}'
-      title='{{title}}'
-      aria-label='{{title}}'
     >
-    <img src="{{ feature_image }}" alt="" 
-    class="aspect-[16/9] w-full rounded-2xl bg-gray-100 object-cover sm:aspect-[2/1] lg:aspect-[3/2]">
+    <img src="{{img_url feature_image }}" alt="" 
+    class="aspect-[16/9] w-full rounded-2xl bg-gray-100 object-cover sm:aspect-[2/1] lg:aspect-[3/2]" />
     </a>
     {{/if}}
     <div class="absolute inset-0 rounded-2xl ring-1 ring-inset ring-gray-900/10"></div>
