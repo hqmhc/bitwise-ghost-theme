@@ -13,7 +13,9 @@ Re-usable card for linking to posts
         </div>
         <div class="max-w-xl pl-4 group">
           <div class="mt-8 flex items-center justify-between gap-x-4 text-xs">
-            <a href="#" class="relative z-10  font-bold text-blue-600 group-hover:underline text-lg">{{title}}</a>
+            {{#each tags}}
+            <a href="#" class="relative z-10  font-bold text-blue-600 group-hover:underline text-lg">{{this.name}}</a>
+            {{/each}}
             <time datetime={{date format="YYYY-MM-DD"}} class="text-gray-500 pr-4">{{date format="D MMM YYYY"}}</time>
           </div>
           <div class="group relative">
