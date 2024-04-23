@@ -7,7 +7,7 @@
           <div class="relative flex items-center gap-x-4 px-4 py-1 text-sm leading-6 text-gray-600">
            <time datetime="2020-03-16" class="text-gray-500">{{date format="D MMM YYYY"}}</time>
               {{#foreach tags}}
-              <a href="#" class="relative z-10 rounded-full bg-gray-50 px-3 py-1.5 font-medium text-gray-600 hover:bg-gray-100">{{name}}</a>
+              <a href="#" class="relative z-10 rounded-full bg-gray-50 px-3 py-1.5 font-medium text-gray-600 hover:bg-gray-100">{{this.name}}</a>
              {{/foreach}}
           </div>
         </div>
